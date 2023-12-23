@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WP Pusher | Checkout</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body,
+        html {
+            font-family: 'Lato', sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 1.7;
+            color: #1D2C3C;
+            padding: 0;
+            margin: 0;
+            background-color: #F5F8FA;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: transparent;
+            position: relative;
+            z-index: 100;
+            margin: 28px 40px 0;
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1440px;
+            width: 100%;
+            margin: 0 auto;
+            padding-bottom: 30px;
+            border-bottom: 2px solid #E0E6EA;
+        }
+
+        .navbar__logo img {
+            width: 200px;
+        }
+
+        .navbar__menu ul {
+            display: flex;
+            list-style: none;
+        }
+
+        .navbar__menu ul li {
+            margin-right: 20px;
+        }
+
+        .navbar__menu ul li:last-child {
+            margin-right: 0;
+        }
+
+        .navbar__menu ul li a {
+            text-decoration: none;
+            color: #1D2C3C;
+            font-weight: 700;
+            font-size: 14px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .navbar__menu ul li a:hover {
+            color: #548BC5;
+        }
+
+        .btn {
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: 700;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .btn--primary {
+            background-color: #1D2C3C;
+            color: #fff !important;
+            border: 2px solid #1D2C3C;
+        }
+
+        .btn--primary:hover {
+            background-color: #fff;
+            color: #1D2C3C;
+        }
+
+        .btn--outline {
+            background-color: transparent;
+            color: #1D2C3C !important;
+            border: 2px solid #1D2C3C;
+        }
+
+        .btn--outline:hover {
+            background-color: #1D2C3C;
+            color: #fff !important;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar__logo">
+                <img src="images/logo.png" alt="Logo">
+            </div>
+            <div class="navbar__menu">
+                <ul>
+                    <li><a href="#">Download</a></li>
+                    <li><a href="#">Learn more</a></li>
+                    <li><a href="#">Pricing</a></li>
+                    <li><a href="#">Help</a></li>
+                    <li><a href="#" class="btn btn--outline">Account</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</body>
+
+</html>
