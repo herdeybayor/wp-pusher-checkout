@@ -129,15 +129,18 @@
             padding: 40px 48px;
         }
 
-        .checkout .checkout__header {
-            padding-bottom: 32px;
-            border-bottom: 2px solid #F5F7FA;
-        }
-
-        .checkout .checkout__header h2 {
+        .checkout h2 {
             text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
             font-size: 30px;
 
+        }
+
+        .checkout hr {
+            margin-top: 40px;
+            margin-bottom: 32px;
+            margin-left: -48px;
+            margin-right: -48px;
+            border: 1px solid #F5F7FA;
         }
 
         .checkout .checkout__pricing {
@@ -264,6 +267,69 @@
             font-size: 16px;
             font-weight: 700;
         }
+
+        .checkout .checkout__form__step {
+            display: flex;
+            align-items: center;
+            margin-bottom: 32px;
+        }
+
+        .checkout .checkout__form__step span {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: 2px solid #548BC5;
+            color: #548BC5;
+            font-size: 16px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .checkout .checkout__form__step h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-left: 16px;
+        }
+
+        .checkout .checkout__form__grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 32px 16px;
+        }
+
+        .checkout .checkout__form__grid .checkout__form__group {
+            grid-column: span 2;
+        }
+
+        .checkout .checkout__form__grid .checkout__form__group:nth-child(3) {
+            grid-column: span 3;
+        }
+
+        .checkout .checkout__form__group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .checkout .checkout__form__group label {
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .checkout .checkout__form__group input {
+            background: #EDEFF2;
+            border-radius: 6px;
+            border: none;
+            outline: none;
+            padding: 10px 14px;
+            font-size: 14px;
+        }
+
+        .checkout .checkout__form__group input::placeholder {
+            color: #B9B9B9;
+            font-size: 14px;
+        }
     </style>
 </head>
 
@@ -289,9 +355,38 @@
     <!-- Checkout -->
     <main class="checkout">
         <section class="checkout__main">
-            <div class="checkout__header">
-                <h2>Checkout</h2>
-            </div>
+            <h2>Checkout</h2>
+            <form class="checkout__form">
+                <hr />
+
+                <div class="checkout__form__step">
+                    <span>1</span>
+                    <h3>Your Basic Information</h3>
+                </div>
+                <div class="checkout__form__grid">
+                    <div class="checkout__form__group">
+                        <label for="first-name">First Name</label>
+                        <input type="text" id="first-name" name="first-name" placeholder="Jane" />
+                    </div>
+
+                    <div class="checkout__form__group">
+                        <label for="last-name">Last Name</label>
+                        <input type="text" id="last-name" name="last-name" placeholder="Doe" />
+                    </div>
+
+                    <div class="checkout__form__group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="janedoe@example.com" />
+                    </div>
+                </div>
+
+                <hr />
+
+                <div class="checkout__form__step">
+                    <span>2</span>
+                    <h3>Your Payment Information</h3>
+                </div>
+            </form>
         </section>
         <section class="checkout__pricing">
             <h3>Freelancer</h3>
