@@ -108,6 +108,72 @@
             background-color: #1D2C3C;
             color: #fff !important;
         }
+
+        /* Checkout */
+        .checkout {
+            display: flex;
+            border-radius: 6px;
+            background-color: #fff;
+            max-width: 892px;
+            width: 100%;
+            margin: 85px auto 0;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .checkout__main {
+            flex: 1;
+            padding: 40px 48px;
+        }
+
+        .checkout .checkout__header {
+            padding-bottom: 32px;
+            border-bottom: 2px solid #F5F7FA;
+        }
+
+        .checkout .checkout__header h2 {
+            text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            font-size: 30px;
+            line-height: normal;
+        }
+
+        .checkout .checkout__pricing {
+            width: 312px;
+            background: #1179BF;
+            flex-shrink: 0;
+            padding: 40px 48px;
+            color: #fff;
+        }
+
+        .checkout .checkout__pricing h3 {
+            font-size: 24px;
+            line-height: normal;
+            margin-bottom: 16px;
+        }
+
+        .checkout .checkout__pricing .checkout__price {
+            font-size: 24px;
+            line-height: normal;
+            display: flex;
+            align-items: baseline;
+        }
+
+        .checkout .checkout__pricing .checkout__price--dollar {
+            font-size: 24px;
+            font-weight: 700;
+            align-self: flex-start;
+            margin-top: 10px;
+        }
+
+        .checkout .checkout__pricing .checkout__price--number {
+            font-size: 60px;
+            font-weight: 300;
+        }
+
+        .checkout .checkout__pricing .checkout__price--month {
+            font-size: 18px;
+            font-weight: 700;
+        }
     </style>
 </head>
 
@@ -129,6 +195,24 @@
             </div>
         </div>
     </nav>
+
+    <!-- Checkout -->
+    <main class="checkout">
+        <section class="checkout__main">
+            <div class="checkout__header">
+                <h2>Checkout</h2>
+            </div>
+        </section>
+        <section class="checkout__pricing">
+            <h3>Freelancer</h3>
+
+            <p class="checkout__price">
+                <span class="checkout__price--dollar">$</span>
+                <span class="checkout__price--number">99</span>
+                <span class="checkout__price--month">/year</span>
+            </p>
+        </section>
+    </main>
 </body>
 
 </html>
