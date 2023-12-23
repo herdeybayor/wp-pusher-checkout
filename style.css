@@ -1,5 +1,447 @@
+/* Reset CSS */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+body,
+html {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #1d2c3c;
+    padding: 0;
+    margin: 0;
+    background-color: #f5f8fa;
+    line-height: normal;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #f5f8fa;
+    z-index: 100;
+    margin: 28px 40px 0;
+    position: sticky;
+    top: 0;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    border-bottom: 2px solid #e0e6ea;
+}
+
+.navbar__logo img {
+    width: 200px;
+}
+
+.navbar__menu ul {
+    display: flex;
+    list-style: none;
+}
+
+.navbar__menu ul li {
+    margin-right: 20px;
+}
+
+.navbar__menu ul li:last-child {
+    margin-right: 0;
+}
+
+.navbar__menu ul li a {
+    text-decoration: none;
+    color: #1d2c3c;
+    font-weight: 700;
+    font-size: 14px;
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar__menu ul li a:hover {
+    color: #548bc5;
+}
+
+.btn {
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: 700;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn--primary {
+    background-color: #1d2c3c;
+    color: #fff !important;
+    border: 2px solid #1d2c3c;
+}
+
+.btn--primary:hover {
+    background-color: #fff;
+    color: #1d2c3c;
+}
+
+.btn--outline {
+    background-color: transparent;
+    color: #1d2c3c !important;
+    border: 2px solid #1d2c3c;
+}
+
+.btn--outline:hover {
+    background-color: #1d2c3c;
+    color: #fff !important;
+}
+
+/* Checkout */
+.checkout {
+    display: flex;
+    border-radius: 6px;
+    background-color: #fff;
+    max-width: 892px;
+    width: 100%;
+    margin: 85px auto 0;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.checkout__main {
+    flex: 1;
+    padding: 40px 48px;
+    overflow-y: auto;
+}
+
+.checkout h2 {
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-size: 30px;
+}
+
+.checkout hr {
+    margin-top: 40px;
+    margin-bottom: 32px;
+    margin-left: -48px;
+    margin-right: -48px;
+    border: 1px solid #f5f7fa;
+}
+
+.checkout .checkout__pricing {
+    width: 312px;
+    background: #1179bf;
+    flex-shrink: 0;
+    padding: 40px 48px;
+    color: #fff;
+}
+
+.checkout .checkout__pricing h3 {
+    font-size: 24px;
+
+    margin-bottom: 16px;
+}
+
+.checkout .checkout__pricing .checkout__price {
+    font-size: 24px;
+
+    display: flex;
+    align-items: baseline;
+}
+
+.checkout .checkout__pricing .checkout__price--dollar {
+    font-size: 24px;
+    font-weight: 700;
+    align-self: flex-start;
+    margin-top: 10px;
+}
+
+.checkout .checkout__pricing .checkout__price--number {
+    font-size: 60px;
+    font-weight: 300;
+}
+
+.checkout .checkout__pricing .checkout__price--month {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.checkout .checkout__pricing .checkout__description {
+    font-size: 16px;
+    font-style: italic;
+    line-height: 24px;
+    margin-top: 16px;
+}
+
+.checkout .checkout__pricing .checkout__features {
+    margin-top: 32px;
+}
+
+.checkout .checkout__pricing .checkout__features ul {
+    list-style: none;
+}
+
+/* Use background image for list icon for better alignment control
+           and to avoid the need for extra markup
+           see https://stackoverflow.com/questions/21427199/list-vertical-align-text-middle-with-list-style-image
+        */
+.checkout .checkout__pricing .checkout__features ul li {
+    background-image: url("images/list-icon.svg");
+    background-position: left center;
+    background-repeat: no-repeat;
+    /* 24px - SVG (the icon) height */
+    line-height: 20px;
+    padding-left: 30px;
+    margin-bottom: 16px;
+}
+
+.checkout .checkout__pricing .checkout__features ul li:last-child {
+    margin-bottom: 0;
+}
+
+.checkout .checkout__pricing .cta {
+    margin-top: 32px;
+}
+
+.checkout .checkout__pricing .cta p {
+    margin-bottom: 8px;
+}
+
+.checkout .checkout__pricing .cta p span {
+    font-weight: 700;
+}
+
+.checkout .checkout__pricing .cta a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 700;
+    border-bottom: 2px solid #b9f5ff;
+    transition: all 0.3s ease-in-out;
+}
+
+.checkout .checkout__pricing .cta a:hover {
+    color: #b9f5ff;
+}
+
+.checkout .checkout__pricing .checkout__testimonial {
+    margin-top: 40px;
+    padding-top: 40px;
+    border-top: 2px solid #ffffff20;
+}
+
+.checkout .checkout__pricing .checkout__testimonial p {
+    font-size: 16px;
+    line-height: 24px;
+    font-style: italic;
+    margin-bottom: 16px;
+}
+
+.checkout .checkout__pricing .checkout__testimonial__author {
+    display: flex;
+    align-items: center;
+}
+
+.checkout .checkout__pricing .checkout__testimonial__author img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 16px;
+}
+
+.checkout .checkout__pricing .checkout__testimonial__author span {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.checkout .checkout__form__step {
+    display: flex;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+.checkout .checkout__form__step span {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid #548bc5;
+    color: #548bc5;
+    font-size: 16px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.checkout .checkout__form__step h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-left: 16px;
+}
+
+.checkout .checkout__form__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 32px 16px;
+}
+
+.checkout .checkout__form__grid .checkout__form__group {
+    grid-column: span 2;
+}
+
+.checkout .checkout__form__grid .checkout__form__group:nth-child(3) {
+    grid-column: span 3;
+}
+
+.checkout .checkout__form__group {
+    display: flex;
+    flex-direction: column;
+}
+
+.checkout .checkout__form__group label {
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.checkout .checkout__form__group input {
+    background: #edeff2;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    padding: 10px 14px;
+    font-size: 14px;
+    color: #1d2c3c;
+    transition: all 0.3s ease-in-out;
+}
+
+.checkout .checkout__form__group input:focus {
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    border: 1px solid #548bc5;
+}
+
+.checkout .checkout__form__group input::placeholder {
+    color: #b9b9b9;
+    font-size: 14px;
+}
+
+.checkout .checkout_form_credit_card {
+    margin-top: 32px;
+}
+
+.checkout .checkout_form_credit_card label {
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.checkout .checkout_form_credit_card__input {
+    display: flex;
+    justify-content: space-between;
+    background: #edeff2;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    margin-top: 8px;
+}
+
+.checkout .checkout_form_credit_card__input input {
+    width: 80px;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 10px 14px;
+}
+
+.checkout .checkout_form_credit_card__input input:nth-child(1) {
+    flex: 1;
+}
+
+.checkout .checkout_form_credit_card__input input:focus {
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    border: 1px solid #548bc5;
+}
+
+.checkout .checkout_form_credit_card__input input::placeholder {
+    color: #b9b9b9;
+    font-size: 14px;
+}
+
+.checkout input[type="number"]::-webkit-inner-spin-button,
+.checkout input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.checkout input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+.checkout .btn {
+    width: 100%;
+    background: #038e7d;
+    color: #fff;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    font-weight: 700;
+    padding: 16px 0;
+}
+
+.checkout .btn:hover {
+    background: #1d2c3c;
+}
+
+.checkout .checkout__support {
+    display: flex;
+    align-items: center;
+    margin-top: 32px;
+    justify-content: center;
+}
+
+.checkout .checkout__support span {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid #548bc5;
+    color: #548bc5;
+    font-size: 16px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 16px;
+}
+
+.checkout .checkout__support p {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.checkout .checkout__support a {
+    text-decoration: none;
+    color: #548bc5;
+    font-weight: 700;
+    border-bottom: 2px solid #548bc5;
+    transition: all 0.3s ease-in-out;
+}
+
+.checkout .checkout__support a:hover {
+    color: #1d2c3c;
+}
+
+.checkout .powered-by-stripe {
+    display: block;
+    margin: 24px auto 0;
+    opacity: 0.5;
+    transition: all 0.3s ease-in-out;
+}
+
+.checkout .powered-by-stripe:hover {
+    opacity: 0.8;
+}
+
+.copyright {
+    text-align: center;
+    font-size: 14px;
+    margin-top: 32px;
+    margin-bottom: 32px;
 }
