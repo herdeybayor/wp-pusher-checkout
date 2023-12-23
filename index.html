@@ -119,7 +119,7 @@
             background-color: #fff;
             max-width: 892px;
             width: 100%;
-            margin: 85px auto;
+            margin: 85px auto 0;
             box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
             overflow: hidden;
         }
@@ -127,6 +127,7 @@
         .checkout__main {
             flex: 1;
             padding: 40px 48px;
+            overflow-y: auto;
         }
 
         .checkout h2 {
@@ -324,11 +325,140 @@
             outline: none;
             padding: 10px 14px;
             font-size: 14px;
+            color: #1D2C3C;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .checkout .checkout__form__group input:focus {
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+            border: 1px solid #548BC5;
         }
 
         .checkout .checkout__form__group input::placeholder {
             color: #B9B9B9;
             font-size: 14px;
+        }
+
+        .checkout .checkout_form_credit_card {
+            margin-top: 32px;
+        }
+
+        .checkout .checkout_form_credit_card label {
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .checkout .checkout_form_credit_card__input {
+            display: flex;
+            justify-content: space-between;
+            background: #EDEFF2;
+            border-radius: 6px;
+            border: none;
+            outline: none;
+            margin-top: 8px;
+        }
+
+        .checkout .checkout_form_credit_card__input input {
+            width: 80px;
+            background: transparent;
+            border: none;
+            outline: none;
+            padding: 10px 14px;
+        }
+
+        .checkout .checkout_form_credit_card__input input:nth-child(1) {
+            flex: 1;
+        }
+
+        .checkout .checkout_form_credit_card__input input:focus {
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+            border: 1px solid #548BC5;
+        }
+
+        .checkout .checkout_form_credit_card__input input::placeholder {
+            color: #B9B9B9;
+            font-size: 14px;
+        }
+
+        .checkout input[type="number"]::-webkit-inner-spin-button,
+        .checkout input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        .checkout input[type="number"] {
+            -moz-appearance: textfield;
+        }
+
+        .checkout .btn {
+            width: 100%;
+            background: #038E7D;
+            color: #fff;
+            border: none;
+            outline: none;
+            font-size: 18px;
+            font-weight: 700;
+            padding: 16px 0;
+        }
+
+        .checkout .btn:hover {
+            background: #1D2C3C;
+        }
+
+        .checkout .checkout__support {
+            display: flex;
+            align-items: center;
+            margin-top: 32px;
+            justify-content: center;
+        }
+
+        .checkout .checkout__support span {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: 2px solid #548BC5;
+            color: #548BC5;
+            font-size: 16px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 16px;
+        }
+
+        .checkout .checkout__support p {
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .checkout .checkout__support a {
+            text-decoration: none;
+            color: #548BC5;
+            font-weight: 700;
+            border-bottom: 2px solid #548BC5;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .checkout .checkout__support a:hover {
+            color: #1D2C3C;
+        }
+
+        .checkout .powered-by-stripe {
+            display: block;
+            margin: 24px auto 0;
+            opacity: 0.5;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .checkout .powered-by-stripe:hover {
+            opacity: 0.8;
+        }
+
+        .copyright {
+            text-align: center;
+            font-size: 14px;
+            margin-top: 32px;
+            margin-bottom: 32px;
         }
     </style>
 </head>
@@ -366,17 +496,17 @@
                 <div class="checkout__form__grid">
                     <div class="checkout__form__group">
                         <label for="first-name">First Name</label>
-                        <input type="text" id="first-name" name="first-name" placeholder="Jane" />
+                        <input type="text" id="first-name" name="first-name" placeholder="Jane" required />
                     </div>
 
                     <div class="checkout__form__group">
                         <label for="last-name">Last Name</label>
-                        <input type="text" id="last-name" name="last-name" placeholder="Doe" />
+                        <input type="text" id="last-name" name="last-name" placeholder="Doe" required />
                     </div>
 
                     <div class="checkout__form__group">
                         <label for="email">Email</label>
-                        <input type="email" id="email" name="email" placeholder="janedoe@example.com" />
+                        <input type="email" id="email" name="email" placeholder="janedoe@example.com" required />
                     </div>
                 </div>
 
@@ -386,7 +516,29 @@
                     <span>2</span>
                     <h3>Your Payment Information</h3>
                 </div>
+
+                <div class="checkout_form_credit_card">
+                    <label for="card_number">Credit Card</label>
+                    <div class="checkout_form_credit_card__input">
+                        <input type="number" name="card_number" id="card_number" placeholder="Card Number"
+                            maxlength="16" required>
+                        <input type="text" name="card_validity" id="card_validity" placeholder="MM/YY" maxlength="5"
+                            required>
+                        <input type="number" name="card_cvv" id="card_cvv" placeholder="CVV" maxlength="3" required>
+                    </div>
+                </div>
+
+                <hr />
+
+                <button class="btn btn--success">Buy WP Pusher</button>
             </form>
+
+            <div class="checkout__support">
+                <span>?</span>
+                <p>Need help? Don't hesitate to <a href="#">contact support</a>!</p>
+            </div>
+
+            <img class="powered-by-stripe" src="images/powered-by-stripe.png" alt="Powered by Stripe" />
         </section>
         <section class="checkout__pricing">
             <h3>Freelancer</h3>
@@ -429,6 +581,11 @@
             </div>
         </section>
     </main>
+
+    <p class="copyright">&copy;
+        2018 WP Pusher IVS &bull; <a href="#">Terms of Service</a>
+    </p>
+
 </body>
 
 </html>
