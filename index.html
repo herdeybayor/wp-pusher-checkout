@@ -29,14 +29,16 @@
             padding: 0;
             margin: 0;
             background-color: #F5F8FA;
+            line-height: normal;
         }
 
         /* Navbar */
         .navbar {
             background-color: transparent;
-            position: relative;
             z-index: 100;
             margin: 28px 40px 0;
+            position: sticky;
+            top: 0;
         }
 
         .navbar .container {
@@ -134,7 +136,7 @@
         .checkout .checkout__header h2 {
             text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
             font-size: 30px;
-            line-height: normal;
+
         }
 
         .checkout .checkout__pricing {
@@ -147,13 +149,13 @@
 
         .checkout .checkout__pricing h3 {
             font-size: 24px;
-            line-height: normal;
+
             margin-bottom: 16px;
         }
 
         .checkout .checkout__pricing .checkout__price {
             font-size: 24px;
-            line-height: normal;
+
             display: flex;
             align-items: baseline;
         }
@@ -172,6 +174,93 @@
 
         .checkout .checkout__pricing .checkout__price--month {
             font-size: 18px;
+            font-weight: 700;
+        }
+
+        .checkout .checkout__pricing .checkout__description {
+            font-size: 16px;
+            font-style: italic;
+            line-height: 24px;
+            margin-top: 16px;
+        }
+
+        .checkout .checkout__pricing .checkout__features {
+            margin-top: 32px;
+        }
+
+        .checkout .checkout__pricing .checkout__features ul {
+            list-style: none;
+        }
+
+        /* Use background image for list icon for better alignment control
+           and to avoid the need for extra markup
+           see https://stackoverflow.com/questions/21427199/list-vertical-align-text-middle-with-list-style-image
+        */
+        .checkout .checkout__pricing .checkout__features ul li {
+            background-image: url('images/list-icon.svg');
+            background-position: left center;
+            background-repeat: no-repeat;
+            /* 24px - SVG (the icon) height */
+            line-height: 20px;
+            padding-left: 30px;
+            margin-bottom: 16px;
+        }
+
+        .checkout .checkout__pricing .checkout__features ul li:last-child {
+            margin-bottom: 0;
+        }
+
+        .checkout .checkout__pricing .cta {
+            margin-top: 32px;
+        }
+
+        .checkout .checkout__pricing .cta p {
+            margin-bottom: 8px;
+        }
+
+        .checkout .checkout__pricing .cta p span {
+            font-weight: 700;
+        }
+
+        .checkout .checkout__pricing .cta a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: 700;
+            border-bottom: 2px solid #B9F5FF;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .checkout .checkout__pricing .cta a:hover {
+            color: #B9F5FF;
+        }
+
+        .checkout .checkout__pricing .checkout__testimonial {
+            margin-top: 40px;
+            padding-top: 40px;
+            border-top: 2px solid #FFFFFF20;
+        }
+
+        .checkout .checkout__pricing .checkout__testimonial p {
+            font-size: 16px;
+            line-height: 24px;
+            font-style: italic;
+            margin-bottom: 16px;
+        }
+
+        .checkout .checkout__pricing .checkout__testimonial__author {
+            display: flex;
+            align-items: center;
+        }
+
+        .checkout .checkout__pricing .checkout__testimonial__author img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 16px;
+        }
+
+        .checkout .checkout__pricing .checkout__testimonial__author span {
+            font-size: 16px;
             font-weight: 700;
         }
     </style>
@@ -211,6 +300,37 @@
                 <span class="checkout__price--number">99</span>
                 <span class="checkout__price--month">/year</span>
             </p>
+
+            <p class="checkout__description">
+                Automatically renews after 1 year.
+            </p>
+
+            <div class="checkout__features">
+                <ul>
+                    <li>Use on 5 client sites</li>
+                    <li>Private repositories</li>
+                    <li>Email support</li>
+                </ul>
+            </div>
+
+            <div class="cta">
+                <p>Need <span>20</span> client sites?</p>
+                <a href="#">Switch to the Agency plan</a>
+            </div>
+
+
+            <div class="checkout__testimonial">
+                <p>
+                    FTP is horrible to deal with. <span style="font-weight: bold;">WP Pusher</span> solves that issue,
+                    and
+                    the customer support is awesome!
+                </p>
+
+                <div class="checkout__testimonial__author">
+                    <img src="images/avatar.png" alt="Avatar" />
+                    <span>Kirk Beard</span>
+                </div>
+            </div>
         </section>
     </main>
 </body>
